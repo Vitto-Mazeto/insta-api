@@ -2,6 +2,64 @@ require("dotenv").config();
 const fastify = require("fastify")({ logger: true });
 const fs = require("fs");
 const path = require("path");
+const axios = require("axios");
+
+// Instagram API configuration
+const INSTAGRAM_API_VERSION = "v22.0";
+const INSTAGRAM_API_URL = "https://graph.instagram.com";
+
+// Instagram accounts configuration
+const INSTAGRAM_ACCOUNTS = {
+  "17841401533576017": {
+    id: "17841401533576017",
+    // The token will be fetched from environment variable token_17841401533576017
+  },
+};
+
+// Function to get account token
+const getAccountToken = (accountId) => {
+  const tokenEnvKey = `token_${accountId}`;
+  const token = process.env[tokenEnvKey];
+  if (!token) {
+    throw new Error(`Token not found for account ${accountId}`);
+  }
+  return token;
+};
+
+// Function to send message to Instagram
+const sendInstagramMessage = async (recipientId, text, fromAccountId) => {
+  if (!INSTAGRAM_ACCOUNTS[fromAccountId]) {
+    throw new Error(`Account ${fromAccountId} not configured`);
+  }
+
+  const url = `${INSTAGRAM_API_URL}/${INSTAGRAM_API_VERSION}/${fromAccountId}/messages`;
+  const token = getAccountToken(fromAccountId);
+
+  try {
+    const response = await axios.post(
+      url,
+      {
+        recipient: { id: recipientId },
+        message: { text },
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    fastify.log.info("Message sent successfully:", response.data);
+    return response.data;
+  } catch (error) {
+    fastify.log.error(
+      "Error sending message:",
+      error.response?.data || error.message
+    );
+    throw error;
+  }
+};
 
 // Webhook verification token (you should set this in .env file)
 const VERIFY_TOKEN =
@@ -52,8 +110,44 @@ fastify.post("/webhook", async (request, reply) => {
   try {
     logWebhookEvent(webhookEvent);
     fastify.log.info("Webhook event logged successfully");
+
+    // Process the message if it exists
+    if (webhookEvent.object === "instagram" && webhookEvent.entry) {
+      for (const entry of webhookEvent.entry) {
+        if (entry.messaging) {
+          for (const messagingEvent of entry.messaging) {
+            // Only process if it's a message and not an echo
+            if (messagingEvent.message && !messagingEvent.message.is_echo) {
+              const senderId = messagingEvent.sender.id;
+              const recipientId = messagingEvent.recipient.id;
+
+              // Only respond if we have this account configured
+              if (INSTAGRAM_ACCOUNTS[recipientId]) {
+                // Send "oii" as a response
+                try {
+                  await sendInstagramMessage(senderId, "oii", recipientId);
+                  fastify.log.info(
+                    "Sent response message to:",
+                    senderId,
+                    "from account:",
+                    recipientId
+                  );
+                } catch (error) {
+                  fastify.log.error("Error sending response:", error);
+                }
+              } else {
+                fastify.log.warn(
+                  "Received message for unconfigured account:",
+                  recipientId
+                );
+              }
+            }
+          }
+        }
+      }
+    }
   } catch (error) {
-    fastify.log.error("Error logging webhook event:", error);
+    fastify.log.error("Error processing webhook event:", error);
   }
 
   // Return a 200 OK response
