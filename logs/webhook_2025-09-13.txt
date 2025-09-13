@@ -1,0 +1,155 @@
+
+=== Webhook Event 2025-09-13T11:41:59.342Z ===
+{
+  "object": "instagram",
+  "entry": [
+    {
+      "time": 1757763717741,
+      "id": "17841401533576017",
+      "messaging": [
+        {
+          "sender": {
+            "id": "767616089567300"
+          },
+          "recipient": {
+            "id": "17841401533576017"
+          },
+          "timestamp": 1757763715910,
+          "message": {
+            "mid": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDAxNTMzNTc2MDE3OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2NjE1NDg5OTM2NTUxNzozMjQyNTAxNzQwOTQ0NTExODAyMjY0MjY4NTI0NDg2NjU2MAZDZD",
+            "text": "oi"
+          }
+        }
+      ]
+    }
+  ]
+}
+=====================================
+
+
+=== Webhook Event 2025-09-13T11:42:12.893Z ===
+{
+  "object": "instagram",
+  "entry": [
+    {
+      "time": 1757763732461,
+      "id": "17841401533576017",
+      "messaging": [
+        {
+          "sender": {
+            "id": "767616089567300"
+          },
+          "recipient": {
+            "id": "17841401533576017"
+          },
+          "timestamp": 1757763731928,
+          "message": {
+            "mid": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDAxNTMzNTc2MDE3OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2NjE1NDg5OTM2NTUxNzozMjQyNTAxNzcwNDkzMDQ2OTQ5MTMzNTg3OTkyODU3ODA0OAZDZD",
+            "text": "ola"
+          }
+        }
+      ]
+    }
+  ]
+}
+=====================================
+
+
+=== Webhook Event 2025-09-13T11:42:44.119Z ===
+{
+  "object": "instagram",
+  "entry": [
+    {
+      "time": 1757763763559,
+      "id": "17841401533576017",
+      "messaging": [
+        {
+          "sender": {
+            "id": "17841401533576017"
+          },
+          "recipient": {
+            "id": "767616089567300"
+          },
+          "timestamp": 1757763761495,
+          "message": {
+            "mid": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDAxNTMzNTc2MDE3OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2NjE1NDg5OTM2NTUxNzozMjQyNTAxODI1MDM0NTk5NzE1NDc0ODc3MjM5MzE1NjYwOAZDZD",
+            "text": "Oii",
+            "is_echo": true
+          }
+        }
+      ]
+    }
+  ]
+}
+=====================================
+
+
+=== Webhook Event 2025-09-13T11:43:13.919Z ===
+{
+  "object": "instagram",
+  "entry": [
+    {
+      "time": 1757763793288,
+      "id": "17841401533576017",
+      "messaging": [
+        {
+          "sender": {
+            "id": "767616089567300"
+          },
+          "recipient": {
+            "id": "17841401533576017"
+          },
+          "timestamp": 1757763792639,
+          "message": {
+            "mid": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDAxNTMzNTc2MDE3OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2NjE1NDg5OTM2NTUxNzozMjQyNTAxODgyNDg2MTg3MjMzNjk5MjkxNDk0NzE3ODQ5NgZDZD",
+            "attachments": [
+              {
+                "type": "audio",
+                "payload": {
+                  "url": "https://lookaside.fbsbx.com/ig_messaging_cdn/?asset_id=1286944896463828&signature=AYeTekMmjpGh_ve0RXfUIGo2wHa60ejSokjKV_9oK7VwkgYEQNFaMgIJTl_vN5ijOC_y3CBKPjsjB_cE9mKDeyDVz-m-z0jNYIgDm6PIjbyZJlVnvct9mQt-6CtkXwvc_S_IzUrUHOrJFWQwtvAYbQOcZEmkK2X_fS2ZKYyVAg2KfnnQcp5F_oketUmfYfFiMMHPVmGZLYJSjAbYmMZXSY10QobTktA"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+=====================================
+
+
+=== Webhook Event 2025-09-13T11:44:03.552Z ===
+{
+  "object": "instagram",
+  "entry": [
+    {
+      "time": 1757763843086,
+      "id": "17841401533576017",
+      "messaging": [
+        {
+          "sender": {
+            "id": "767616089567300"
+          },
+          "recipient": {
+            "id": "17841401533576017"
+          },
+          "timestamp": 1757763842214,
+          "message": {
+            "mid": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDAxNTMzNTc2MDE3OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2NjE1NDg5OTM2NTUxNzozMjQyNTAxOTczOTM1NDMwMjk1NzIyMDMyOTU2OTY0ODY0MAZDZD",
+            "attachments": [
+              {
+                "type": "image",
+                "payload": {
+                  "url": "https://lookaside.fbsbx.com/ig_messaging_cdn/?asset_id=67190471941956&signature=AYeEe7KtCz7nGjCAbKyOh3cI3iSjGPr8rRyf39pnrttvDQCU8vW0ulwyRFkanD00kSoPm0SDkcRsfn9DaK62o0z8cAdq9uEUcuEXRBvCZm2rLjLvHppGqKXty6PGH0X7s33LxhD-_sbDI5u0m-sifcX_nhUKy4asHRd20oCRVit5oylMICqZR-j8hRnn6sOAHlHLOlzMrqwz5cuLb90GQqo9Q"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+=====================================
+
