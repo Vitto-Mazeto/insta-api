@@ -1,3 +1,7 @@
 https://docs.google.com/document/d/14qhyHFWXMmm4NAgF8f5D_jdv-L-OgSa9tbdmznSN-8k/edit?tab=t.0
 
 Lembrar de fazer refresh token de 60 em 60 dias
+
+Next steps:
+https://developers.facebook.com/docs/graph-api/overview/access-levels#advanced-access
+https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login
